@@ -20,7 +20,7 @@ class Announcer:
 
         self._last_tracker_client = None
         self._more_peers_requested = asyncio.Event()
-        self._task = None  # type: Optional[]
+        self._task = None  # type: Optional[asyncio.Task]
 
     @property
     def last_tracker_client(self) -> BaseTrackerClient:

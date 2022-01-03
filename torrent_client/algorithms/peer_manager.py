@@ -68,7 +68,7 @@ class PeerManager:
             else:
                 client.confirm_info_hash(self._download_info, self._file_structure)
 
-            self._peer_data[peer] = PeerData(client, asyncio.current_task(), time.time())
+            self._peer_data[peer] = PeerData(client, asyncio.Task.current_task(), time.time())
             self._statistics.peer_count += 1
 
             await client.run()
